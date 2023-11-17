@@ -1,0 +1,8 @@
+#!/bin/bash
+for i in 1 2 3 4 5 6 7 8 9 10
+do
+    a=$(./hash-table-tester -t $s1 -s $2)
+    base=$(echo $a | cut -d ' ' -f 7 | tr -d -c 0-9)
+    v2=$(echo $a | cut -d ' ' -f 23 | tr -d -c 0-9)
+    awk -v var1=$base -v var2=$v2 'BEGIN { print  ( var1 / var2 ) }'
+done
